@@ -50,7 +50,7 @@
     "data-import/data-import.html",
     "inspect/inspect.html",
     "metadata-retrieve/metadata-retrieve.html",
-    "explore-api.html",
+    "explore-api/explore-api.html",
     "limits/limits.html"
   ],
   "incognito": "replaced-at-build",

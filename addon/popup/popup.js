@@ -133,7 +133,7 @@ class App extends React.PureComponent {
             h("a", {ref: "limitsBtn", href: "../limits/limits.html?" + hostArg, target: linkTarget, className: "button"}, "Org ", h("u", {}, "L"), "imits"),
             // Advanded features should be put below this line, and the layout adjusted so they are below the fold
             h("a", {ref: "metaRetrieveBtn", href: "../metadata-retrieve/metadata-retrieve.html?" + hostArg, target: linkTarget, className: "button"}, h("u", {}, "D"), "ownload Metadata"),
-            h("a", {ref: "apiExploreBtn", href: "../explore-api.html?" + hostArg, target: linkTarget, className: "button"}, "E", h("u", {}, "x"), "plore API"),
+            h("a", {ref: "apiExploreBtn", href: "../explore-api/explore-api.html?" + hostArg, target: linkTarget, className: "button"}, "E", h("u", {}, "x"), "plore API"),
             // Workaround for in Lightning the link to Setup always opens a new tab, and the link back cannot open a new tab.
             inLightning && isInSetup && h("a", {ref: "homeBtn", href: `https://${sfHost}/lightning/page/home`, title: "You can choose if you want to open in a new tab or not", target: linkTarget, className: "button"}, "Salesforce ", h("u", {}, "H"), "ome"),
             inLightning && !isInSetup && h("a", {ref: "homeBtn", href: `https://${sfHost}/lightning/setup/SetupOneHome/home?setupApp=all`, title: "You can choose if you want to open in a new tab or not", target: linkTarget, className: "button"}, "Setup ", h("u", {}, "H"), "ome"),
@@ -841,7 +841,7 @@ class AllDataSelection extends React.PureComponent {
     let args = new URLSearchParams();
     args.set("host", sfHost);
     args.set("checkDeployStatus", selectedValue.recordId);
-    return "../explore-api.html?" + args;
+    return "../explore-api/explore-api.html?" + args;
   }
   /**
    * Optimistically generate lightning setup uri for the provided object api name.
