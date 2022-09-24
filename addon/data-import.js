@@ -2,7 +2,8 @@
 import {sfConn, apiVersion} from "./inspector.js";
 /* global initButton */
 import {csvParse} from "./csv-parse.js";
-import {DescribeInfo, copyToClipboard, initScrollTable} from "./data-load.js";
+import {DescribeInfo, copyToClipboard} from "./data-load.js";
+import {initScrollTable} from "./utils/initScrollTable.js";
 
 class Model {
 
