@@ -2,12 +2,27 @@
 /* global showStdPageDetails */
 "use strict";
 
-// sfdcBody = normal Salesforce page
-// ApexCSIPage = Developer Console
-// auraLoadingBox = Lightning / Salesforce1
-// location.host.endsWith("visualforce.com") = Visualforce page
-if (document.querySelector("body.sfdcBody, body.ApexCSIPage, #auraLoadingBox") || location.host.endsWith("visualforce.com")) {
-  // We are in a Salesforce org
+class CurrentLocation {
+  static get inNormalSfPage() {
+    return !!document.querySelector("body.sfdcBody");
+  }
+  static get inDevConsole() {
+    return !!document.querySelector("body.ApexCSIPage");
+  }
+  static get inLightning(){
+    return !!document.querySelector("#auraLoadingBox");
+  }
+  
+  static get inVisualforcePage(){
+    return location.host.endsWith("visualforce.com");
+  }
+
+  static get inSfPage() {
+    return this.inNormalSfPage || this.inDevConsole || this.inLightning || this.inVisualforcePage;
+  }
+}
+
+if (CurrentLocation.inSfPage) {
   chrome.runtime.sendMessage({message: "getSfHost", url: location.href}, sfHost => {
     if (sfHost) {
       initButton(sfHost, false);
@@ -54,8 +69,8 @@ function initButton(sfHost, inInspector) {
         popupEl.contentWindow.postMessage({
           insextInitResponse: true,
           sfHost,
-          inDevConsole: !!document.querySelector("body.ApexCSIPage"),
-          inLightning: !!document.querySelector("#auraLoadingBox"),
+          inDevConsole: CurrentLocation.inDevConsole,
+          inLightning: CurrentLocation.inLightning,
           inInspector,
         }, "*");
       }
