@@ -377,7 +377,7 @@ class Model {
     if (this.useToolingApi) {
       args.set("useToolingApi", "1");
     }
-    return "inspect.html?" + args;
+    return "inspect/inspect.html?" + args;
   }
 
   doImport() {

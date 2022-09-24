@@ -136,7 +136,7 @@ class Model {
     if (this.queryTooling) {
       args.set("useToolingApi", "1");
     }
-    return "inspect.html?" + args;
+    return "inspect/inspect.html?" + args;
   }
   selectHistoryEntry() {
     if (this.selectedHistoryEntry != null) {

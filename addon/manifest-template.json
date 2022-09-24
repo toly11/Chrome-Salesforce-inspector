@@ -48,7 +48,7 @@
     "popup/popup.html",
     "data-export/data-export.html",
     "data-import/data-import.html",
-    "inspect.html",
+    "inspect/inspect.html",
     "metadata-retrieve/metadata-retrieve.html",
     "explore-api.html",
     "limits/limits.html"

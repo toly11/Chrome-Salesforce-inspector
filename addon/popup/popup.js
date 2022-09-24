@@ -831,7 +831,7 @@ class AllDataSelection extends React.PureComponent {
       if (selectedValue.recordId) {
         args.set("recordId", selectedValue.recordId);
       }
-      return "../inspect.html?" + args;
+      return "../inspect/inspect.html?" + args;
     } else {
       return undefined;
     }
