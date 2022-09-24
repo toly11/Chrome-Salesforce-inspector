@@ -243,7 +243,7 @@ class Model {
     if (this.useToolingApi) {
       args.set("useToolingApi", "1");
     }
-    return "data-export.html?" + args;
+    return "data-export/data-export.html?" + args;
   }
   toggleObjectActions() {
     this.objectActionsOpen = !this.objectActionsOpen;
