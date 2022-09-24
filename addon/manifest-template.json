@@ -47,7 +47,7 @@
   "web_accessible_resources": [
     "popup.html",
     "data-export/data-export.html",
-    "data-import.html",
+    "data-import/data-import.html",
     "inspect.html",
     "metadata-retrieve.html",
     "explore-api.html",

@@ -1,4 +1,4 @@
-import {sfConn} from "./inspector.js";
+import {sfConn} from "../inspector.js";
 
 export async function dataImportTest(test) {
   console.log("TEST data-import");
