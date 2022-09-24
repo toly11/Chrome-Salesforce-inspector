@@ -42,7 +42,7 @@ function initButton(sfHost, inInspector) {
       }
     });
 
-    let popupSrc = chrome.extension.getURL("popup.html");
+    let popupSrc = chrome.extension.getURL("popup/popup.html");
     let popupEl = document.createElement("iframe");
     popupEl.className = "insext-popup";
     popupEl.src = popupSrc;

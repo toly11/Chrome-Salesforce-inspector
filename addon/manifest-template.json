@@ -45,7 +45,7 @@
     ]
   },
   "web_accessible_resources": [
-    "popup.html",
+    "popup/popup.html",
     "data-export/data-export.html",
     "data-import/data-import.html",
     "inspect.html",

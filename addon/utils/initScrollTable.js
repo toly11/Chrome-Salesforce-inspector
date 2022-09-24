@@ -289,7 +289,7 @@ function renderCell(rt, cell, td) {
           if (recordId) {
             args.set("recordId", recordId);
           }
-          aShow.href = "inspect.html?" + args;
+          aShow.href = "../inspect.html?" + args;
           aShow.textContent = "Show all data";
           pop.appendChild(aShow);
         }
