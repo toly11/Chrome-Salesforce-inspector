@@ -49,7 +49,7 @@
     "data-export/data-export.html",
     "data-import/data-import.html",
     "inspect.html",
-    "metadata-retrieve.html",
+    "metadata-retrieve/metadata-retrieve.html",
     "explore-api.html",
     "limits/limits.html"
   ],
