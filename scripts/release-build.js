@@ -30,8 +30,8 @@ fs.copySync("addon", target, {
       // Skip the manifest source file
       && file != "addon/manifest-template.json"
       // Skip files where the release version will use minified versions instead
-      && file != "addon/react.js"
-      && file != "addon/react-dom.js";
+      && file != "addon/react/react.js"
+      && file != "addon/react/react-dom.js";
   }
 });
 
@@ -39,12 +39,12 @@ fs.copySync("addon", target, {
 replace.sync({
   files: target + "/*.html",
   replace: [
-    '<script src="react.js"></script>',
-    '<script src="react-dom.js"></script>'
+    '<script src="react/react.js"></script>',
+    '<script src="react/react-dom.js"></script>'
   ],
   with: [
-    '<script src="react.min.js"></script>',
-    '<script src="react-dom.min.js"></script>'
+    '<script src="react/react.min.js"></script>',
+    '<script src="react/react-dom.min.js"></script>'
   ]
 });
 
