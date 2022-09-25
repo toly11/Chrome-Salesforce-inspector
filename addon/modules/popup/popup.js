@@ -1,6 +1,6 @@
 /* global React ReactDOM */
-import {sfConn, apiVersion} from "../inspector.js";
-import {getAllFieldSetupLinks} from "../setup-links.js";
+import {sfConn, apiVersion} from "/inspector.js";
+import {getAllFieldSetupLinks} from "/setup-links.js";
 
 let h = React.createElement;
 
@@ -128,12 +128,12 @@ class App extends React.PureComponent {
         h("div", {className: "main"},
           h(AllDataBox, {ref: "showAllDataBox", sfHost, showDetailsSupported: !inLightning && !inInspector, linkTarget, contextUrl}),
           h("div", {className: "global-box"},
-            h("a", {ref: "dataExportBtn", href: "../data-export/data-export.html?" + hostArg, target: linkTarget, className: "button"}, "Data ", h("u", {}, "E"), "xport"),
-            h("a", {ref: "dataImportBtn", href: "../data-import/data-import.html?" + hostArg, target: linkTarget, className: "button"}, "Data ", h("u", {}, "I"), "mport"),
-            h("a", {ref: "limitsBtn", href: "../limits/limits.html?" + hostArg, target: linkTarget, className: "button"}, "Org ", h("u", {}, "L"), "imits"),
+            h("a", {ref: "dataExportBtn", href: "/modules/data-export/data-export.html?" + hostArg, target: linkTarget, className: "button"}, "Data ", h("u", {}, "E"), "xport"),
+            h("a", {ref: "dataImportBtn", href: "/modules/data-import/data-import.html?" + hostArg, target: linkTarget, className: "button"}, "Data ", h("u", {}, "I"), "mport"),
+            h("a", {ref: "limitsBtn", href: "/modules/limits/limits.html?" + hostArg, target: linkTarget, className: "button"}, "Org ", h("u", {}, "L"), "imits"),
             // Advanded features should be put below this line, and the layout adjusted so they are below the fold
-            h("a", {ref: "metaRetrieveBtn", href: "../metadata-retrieve/metadata-retrieve.html?" + hostArg, target: linkTarget, className: "button"}, h("u", {}, "D"), "ownload Metadata"),
-            h("a", {ref: "apiExploreBtn", href: "../explore-api/explore-api.html?" + hostArg, target: linkTarget, className: "button"}, "E", h("u", {}, "x"), "plore API"),
+            h("a", {ref: "metaRetrieveBtn", href: "/modules/metadata-retrieve/metadata-retrieve.html?" + hostArg, target: linkTarget, className: "button"}, h("u", {}, "D"), "ownload Metadata"),
+            h("a", {ref: "apiExploreBtn", href: "/modules/explore-api/explore-api.html?" + hostArg, target: linkTarget, className: "button"}, "E", h("u", {}, "x"), "plore API"),
             // Workaround for in Lightning the link to Setup always opens a new tab, and the link back cannot open a new tab.
             inLightning && isInSetup && h("a", {ref: "homeBtn", href: `https://${sfHost}/lightning/page/home`, title: "You can choose if you want to open in a new tab or not", target: linkTarget, className: "button"}, "Salesforce ", h("u", {}, "H"), "ome"),
             inLightning && !isInSetup && h("a", {ref: "homeBtn", href: `https://${sfHost}/lightning/setup/SetupOneHome/home?setupApp=all`, title: "You can choose if you want to open in a new tab or not", target: linkTarget, className: "button"}, "Setup ", h("u", {}, "H"), "ome"),
@@ -831,7 +831,7 @@ class AllDataSelection extends React.PureComponent {
       if (selectedValue.recordId) {
         args.set("recordId", selectedValue.recordId);
       }
-      return "../inspect/inspect.html?" + args;
+      return "/modules/inspect/inspect.html?" + args;
     } else {
       return undefined;
     }
@@ -841,7 +841,7 @@ class AllDataSelection extends React.PureComponent {
     let args = new URLSearchParams();
     args.set("host", sfHost);
     args.set("checkDeployStatus", selectedValue.recordId);
-    return "../explore-api/explore-api.html?" + args;
+    return "/modules/explore-api/explore-api.html?" + args;
   }
   /**
    * Optimistically generate lightning setup uri for the provided object api name.

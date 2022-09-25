@@ -1,7 +1,7 @@
 export async function popupTest(test) {
   console.log("TEST popup");
   let {assertEquals, loadPage} = test;
-  let {getRecordId} = await loadPage("../popup/test-page.html");
+  let {getRecordId} = await loadPage("/modules/popup/test-page.html");
   // Classic & Console
   assertEquals("001i0000007BlV0", getRecordId(new URL("https://na1.salesforce.com/001i0000007BlV0"))); // classic record detail page
   assertEquals("001i0000007BlV0", getRecordId(new URL("https://cs81.salesforce.com/001i0000007BlV0"))); // in sandbox

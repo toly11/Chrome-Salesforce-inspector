@@ -55,13 +55,13 @@
         "https://*.visualforce.com/*"
       ],
       "resources": [
-        "popup/popup.html",
-        "data-export/data-export.html",
-        "data-import/data-import.html",
-        "inspect/inspect.html",
-        "metadata-retrieve/metadata-retrieve.html",
-        "explore-api/explore-api.html",
-        "limits/limits.html"
+        "modules/popup/popup.html",
+        "modules/data-export/data-export.html",
+        "modules/data-import/data-import.html",
+        "modules/inspect/inspect.html",
+        "modules/metadata-retrieve/metadata-retrieve.html",
+        "modules/explore-api/explore-api.html",
+        "modules/limits/limits.html"
       ]
     }
   ],

@@ -1,5 +1,5 @@
 /* global React ReactDOM */
-import {sfConn, apiVersion} from "../inspector.js";
+import {sfConn, apiVersion} from "/inspector.js";
 /* global initButton */
 
 class Model {

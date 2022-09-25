@@ -1,7 +1,7 @@
 /* global React ReactDOM */
-import {sfConn, apiVersion} from "../inspector.js";
+import {sfConn, apiVersion} from "/inspector.js";
 /* global initButton */
-import {getObjectSetupLinks, getFieldSetupLinks} from "../setup-links.js";
+import {getObjectSetupLinks, getFieldSetupLinks} from "/setup-links.js";
 
 class Model {
   constructor(sfHost) {
@@ -243,7 +243,7 @@ class Model {
     if (this.useToolingApi) {
       args.set("useToolingApi", "1");
     }
-    return "../data-export/data-export.html?" + args;
+    return "/modules/data-export/data-export.html?" + args;
   }
   toggleObjectActions() {
     this.objectActionsOpen = !this.objectActionsOpen;
@@ -1061,12 +1061,12 @@ class App extends React.Component {
           ),
           model.useTab != "all" ? null : h("div", {className: "filter-box"},
             h("svg", {className: "filter-icon"},
-              h("use", {xlinkHref: "../assets/symbols.svg#search"})
+              h("use", {xlinkHref: "/assets/symbols.svg#search"})
             ),
             h("input", {className: "filter-input", placeholder: "Filter", value: model.rowsFilter, onChange: this.onRowsFilterInput, ref: "rowsFilter"}),
             h("a", {href: "about:blank", className: "filter-clear", onClick: this.onClearAndFocusFilter},
               h("svg", {className: "filter-clear-icon"},
-                h("use", {xlinkHref: "../assets/symbols.svg#clear"})
+                h("use", {xlinkHref: "/assets/symbols.svg#clear"})
               )
             )
           ),
@@ -1098,7 +1098,7 @@ class App extends React.Component {
             model.objectName() ? h("a", {href: "about:blank", onClick: this.onShowObjectMetadata, className: "button"}, "More") : null,
             h("button", {className: "button", onClick: this.onToggleObjectActions},
               h("svg", {className: "button-icon"},
-                h("use", {xlinkHref: "../assets/symbols.svg#down"})
+                h("use", {xlinkHref: "/assets/symbols.svg#down"})
               )
             ),
             model.objectActionsOpen && h("div", {className: "pop-menu"},
@@ -1168,7 +1168,7 @@ class ColumnsVisibiltyBox extends React.Component {
     return h("span", {className: "column-button-outer"},
       h("a", {href: "about:blank", onClick: this.onAvailableColumnsClick, className: "button-icon-link"},
         h("svg", {className: "button-icon"},
-          h("use", {xlinkHref: "../assets/symbols.svg#chevrondown"})
+          h("use", {xlinkHref: "/assets/symbols.svg#chevrondown"})
         )
       ),
       rowList.availableColumns ? h("div", {className: "column-popup"},
@@ -1408,7 +1408,7 @@ class FieldActionsCell extends React.Component {
       h("div", {className: "pop-menu-container"},
         h("button", {className: "actions-button", onClick: this.onToggleFieldActions},
           h("svg", {className: "actions-icon"},
-            h("use", {xlinkHref: "../assets/symbols.svg#down"})
+            h("use", {xlinkHref: "/assets/symbols.svg#down"})
           ),
         ),
         row.fieldActionsOpen && h("div", {className: "pop-menu"},
@@ -1444,7 +1444,7 @@ class ChildActionsCell extends React.Component {
       h("div", {className: "pop-menu-container"},
         h("button", {className: "actions-button", onClick: this.onToggleChildActions},
           h("svg", {className: "actions-icon"},
-            h("use", {xlinkHref: "../assets/symbols.svg#down"})
+            h("use", {xlinkHref: "/assets/symbols.svg#down"})
           ),
         ),
         row.childActionsOpen && h("div", {className: "pop-menu"},

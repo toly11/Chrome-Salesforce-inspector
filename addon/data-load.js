@@ -1,7 +1,7 @@
-import {sfConn, apiVersion} from "./inspector.js";
+import {sfConn, apiVersion} from "/inspector.js";
 
-export {copyToClipboard} from "./utils/copyToClipboard.js";
-export {initScrollTable} from "./utils/initScrollTable.js";
+export {copyToClipboard} from "/utils/copyToClipboard.js";
+export {initScrollTable} from "/utils/initScrollTable.js";
 
 // Inspired by C# System.Linq.Enumerable
 export function Enumerable(iterable) {

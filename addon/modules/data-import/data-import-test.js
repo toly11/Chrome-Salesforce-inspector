@@ -1,10 +1,10 @@
-import {sfConn} from "../inspector.js";
+import {sfConn} from "/inspector.js";
 
 export async function dataImportTest(test) {
   console.log("TEST data-import");
   let {assertEquals, assertNotEquals, assert, loadPage, anonApex} = test;
 
-  let {model} = await loadPage("../data-import/data-import.html");
+  let {model} = await loadPage("/modules/data-import/data-import.html");
   let vm = model;
 
   function waitForSpinner() {
