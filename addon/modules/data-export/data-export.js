@@ -1,8 +1,9 @@
 /* global React ReactDOM */
 import {sfConn, apiVersion} from "/inspector.js";
 /* global initButton */
-import {Enumerable, DescribeInfo, copyToClipboard} from "/data-load.js";
+import {DescribeInfo, copyToClipboard} from "/data-load.js";
 import {initScrollTable} from "/utils/initScrollTable.js";
+import { Enumerable } from "/utils/Enumerable.js";
 
 class QueryHistory {
   constructor(storageKey, max) {
