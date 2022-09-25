@@ -7,7 +7,7 @@ export async function dataExportTest(test) {
   localStorage.removeItem("insextQueryHistory");
   localStorage.removeItem("insextSavedQueryHistory");
 
-  let {model, sfConn} = await loadPage("data-export.html");
+  let {model, sfConn} = await loadPage("../data-export/data-export.html");
   let vm = model;
   let queryInput = model.queryInput;
   function queryAutocompleteEvent() {

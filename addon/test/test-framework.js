@@ -1,8 +1,8 @@
-import {sfConn, apiVersion} from "./inspector.js";
-import {popupTest} from "./popup/popup-test.js";
-import {csvParseTest} from "./csv-parse-test.js";
-import {dataImportTest} from "./data-import/data-import-test.js";
-import {dataExportTest} from "./data-export/data-export-test.js";
+import {sfConn, apiVersion} from "../inspector.js";
+import {popupTest} from "../popup/popup-test.js";
+import {csvParseTest} from "../csv-parse-test.js";
+import {dataImportTest} from "../data-import/data-import-test.js";
+import {dataExportTest} from "../data-export/data-export-test.js";
 
 let seenError = false;
 class Test {
