@@ -1004,8 +1004,10 @@ class App extends React.Component {
     return result;
   }
   copyAsExcel() {
+    ShowtTooltip.showtTooltip("copying to clipboard...");
     const table = document.querySelector("body > div#root > div > div.body > table");
     this.clipPut(table);
+    ShowtTooltip.showtTooltip("copied!");
   }
   onDoUpdate() {
     let {model} = this.props;
@@ -1574,4 +1576,44 @@ class DetailsBox extends React.Component {
       }
     }
   };
+}
+
+
+class ShowtTooltip {
+  static #toolTipRef = this.#createTooltip();
+  static #isShowing = false;
+  static #timeout;
+
+  static #createTooltip() {
+    const el = document.createElement("div");
+    el.style.position = "absolute";
+    el.style.bottom = "0";
+    el.style.left = "50%";
+    el.style.transform = "translateX(-50%)";
+    el.style.padding = "5px";
+    el.style.backgroundColor = "white";
+    el.style.color = "black";
+    el.style.boxShadow = "0 0 5px 0 rgba(0,0,0,0.5)";
+    el.style.zIndex = "1000000";
+    el.style.textAlign = "center";
+    return el;
+  }
+  
+  static showtTooltip(message) {
+    if (this.#isShowing) {
+      this.#toolTipRef.textContent = null;
+      clearTimeout(this.#timeout);
+      document.body.removeChild(this.#toolTipRef);
+    }
+
+    this.#toolTipRef.textContent = message;
+    document.body.appendChild(this.#toolTipRef);
+    this.#isShowing = true;
+    this.#timeout = setTimeout(() => {
+      this.#toolTipRef.textContent = null;
+      this.#isShowing = false;
+      clearTimeout(this.#timeout);
+      document.body.removeChild(this.#toolTipRef)
+    }, 1000);
+  }
 }
