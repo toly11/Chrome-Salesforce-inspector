@@ -1,0 +1,24 @@
+{
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "css": [ "button.css", "inspect-inline.css" ],
+      "js": [ "button.js", "inspect-inline.js" ],
+      "matches": [ "https://*.salesforce.com/*", "https://*.visual.force.com/*", "https://*.lightning.force.com/*", "https://*.cloudforce.com/*", "https://*.visualforce.com/*" ]
+   } ],
+   "description": "Productivity tools for Salesforce administrators and developers to inspect data and metadata directly from the Salesforce UI.",
+   "icons": {
+      "128": "icon128.png"
+   },
+   "incognito": "split",
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCx+oJAeHr6HnebRZkFawwrR9zmtuLtB4phMshKB1A/xStKM34n+vTRSR0yzuSv5NDLmam/50WA8lNE/OdEhfRo9qN4A9T8mkQNObbQXNR+ddswmnAAivDMv+V0hsOyCqttWjHqWxzWhdfKwunnb0wvwyG3mUp27tNDzhLOJApzGQIDAQAB",
+   "manifest_version": 2,
+   "minimum_chrome_version": "61",
+   "name": "SF inspector",
+   "permissions": [ "https://*.salesforce.com/*", "https://*.force.com/*", "https://*.cloudforce.com/*", "https://*.visualforce.com/*", "cookies" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.13",
+   "web_accessible_resources": [ "popup.html", "data-export.html", "data-import.html", "inspect.html", "metadata-retrieve.html", "explore-api.html", "limits.html" ]
+}
