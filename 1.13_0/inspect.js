@@ -944,6 +944,7 @@ class App extends React.Component {
     this.onDoCreate = this.onDoCreate.bind(this);
     this.onDoSave = this.onDoSave.bind(this);
     this.onCancelEdit = this.onCancelEdit.bind(this);
+    this.copyAsExcel = this.copyAsExcel.bind(this);
   }
   componentDidMount() {
     this.refs.rowsFilter.focus();
