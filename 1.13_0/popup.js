@@ -74,27 +74,35 @@ class App extends React.PureComponent {
       },
       e: (e) => {
         e.preventDefault();
+        this.refs.dataExportBtn.target = (e.ctrlKey || e.metaKey) ? "_blank" : "_top";
         this.refs.dataExportBtn.click();
       },
       i: (e) => {
         e.preventDefault();
+        this.refs.dataImportBtn.target = (e.ctrlKey || e.metaKey) ? "_blank" : "_top";
         this.refs.dataImportBtn.click();
       },
       l: (e) => {
         e.preventDefault();
+        this.refs.limitsBtn.target = (e.ctrlKey || e.metaKey) ? "_blank" : "_top";
         this.refs.limitsBtn.click();
       },
       d: (e) => {
         e.preventDefault();
+        this.refs.metaRetrieveBtn.target = (e.ctrlKey || e.metaKey) ? "_blank" : "_top";
         this.refs.metaRetrieveBtn.click();
       },
       x: (e) => {
         e.preventDefault();
+        this.refs.apiExploreBtn.target = (e.ctrlKey || e.metaKey) ? "_blank" : "_top";
         this.refs.apiExploreBtn.click();
       },
       h: (e) => {
         e.preventDefault();
-        this.refs.homeBtn?.click();
+        if (this.refs.homeBtn) {
+          this.refs.homeBtn.target = (e.ctrlKey || e.metaKey) ? "_blank" : "_top";
+          this.refs.homeBtn.click();
+        }
       }
     }
 
