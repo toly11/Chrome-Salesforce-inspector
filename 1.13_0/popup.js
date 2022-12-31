@@ -55,38 +55,52 @@ class App extends React.PureComponent {
   }
 
   onShortcutKey(e) {
-    if (e.key == "m") {
-      e.preventDefault();
-      this.refs.showAllDataBox.clickShowDetailsBtn();
+    const keysMap = {
+      u: (e) => {
+        e.preventDefault();
+        this.refs.showAllDataBox.clickUsersLi();
+      },
+      o: (e) => {
+        e.preventDefault();
+        this.refs.showAllDataBox.clickSobjectsLi();
+      },
+      m: (e) => {
+        e.preventDefault();
+        this.refs.showAllDataBox.clickShowDetailsBtn();
+      },
+      a: (e) => {
+        e.preventDefault();
+        this.refs.showAllDataBox.clickAllDataBtn();
+      },
+      e: (e) => {
+        e.preventDefault();
+        this.refs.dataExportBtn.click();
+      },
+      i: (e) => {
+        e.preventDefault();
+        this.refs.dataImportBtn.click();
+      },
+      l: (e) => {
+        e.preventDefault();
+        this.refs.limitsBtn.click();
+      },
+      d: (e) => {
+        e.preventDefault();
+        this.refs.metaRetrieveBtn.click();
+      },
+      x: (e) => {
+        e.preventDefault();
+        this.refs.apiExploreBtn.click();
+      },
+      h: (e) => {
+        e.preventDefault();
+        this.refs.homeBtn?.click();
+      }
     }
-    if (e.key == "a") {
-      e.preventDefault();
-      this.refs.showAllDataBox.clickAllDataBtn();
+
+    if (e.key in keysMap) {
+      keysMap[e.key](e);
     }
-    if (e.key == "e") {
-      e.preventDefault();
-      this.refs.dataExportBtn.click();
-    }
-    if (e.key == "i") {
-      e.preventDefault();
-      this.refs.dataImportBtn.click();
-    }
-    if (e.key == "l") {
-      e.preventDefault();
-      this.refs.limitsBtn.click();
-    }
-    if (e.key == "d") {
-      e.preventDefault();
-      this.refs.metaRetrieveBtn.click();
-    }
-    if (e.key == "x") {
-      e.preventDefault();
-      this.refs.apiExploreBtn.click();
-    }
-    if (e.key == "h" && this.refs.homeBtn) {
-      this.refs.homeBtn.click();
-    }
-    //TODO: Add shortcut for "u to go to user aspect"
   }
   componentDidMount() {
     addEventListener("message", this.onContextUrlMessage);
@@ -234,6 +248,18 @@ class AllDataBox extends React.PureComponent {
         console.error("Unable to query user context", err);
       }
     }
+  }
+
+  clickUsersLi() {
+    this.setState({
+      activeSearchAspect: this.SearchAspectTypes.users
+    });
+  }
+
+  clickSobjectsLi() {
+    this.setState({
+      activeSearchAspect: this.SearchAspectTypes.sobject
+    });
   }
 
   onAspectClick(e) {
